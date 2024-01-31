@@ -17,8 +17,8 @@ headers = ["audio", "is_forgered_index", "is_forgered_category", "forgery_type_i
 
 
 # Return the index for the forgeryCategory type and the string associated
-def getForgeryType(folder):
-    forgery_type_index = folder.index
+def getForgeryType(index):
+    forgery_type_index = index
     forgery_type_category = forgery_category_label[forgery_type_index]
     return forgery_type_index, forgery_type_category
 
@@ -30,13 +30,13 @@ def getIsForgered(forgery_type_index):
 
 # Write the row to the file labeled_dataset.csv
 def write(writer, file_name, is_forgered_index, is_forgered_category, forgery_type_index, forgery_type_category):
-    writer.writerow(
+    writer.writerow([
         file_name, 
         is_forgered_index, 
         is_forgered_category, 
         forgery_type_index, 
         forgery_type_category
-    )
+    ])
                     
              
 # Load paths of the audios from my dataset
@@ -46,7 +46,7 @@ with open('labeled_dataset.csv', 'w', newline='') as csvfile:
     writer.writerow(i for i in headers)
     
     # Travel through all folders of the dataset
-    for folder in folder_paths:
+    for index, folder in enumerate(folder_paths):        
         for root, dirs, files in os.walk(folder):
 
             # Travel through all the files in each folder
@@ -54,7 +54,7 @@ with open('labeled_dataset.csv', 'w', newline='') as csvfile:
                 if file.endswith(".WAV"):
                     file_name = os.path.join(root, file)
                     
-                    forgery_type_index, forgery_type_category = getForgeryType(folder)
+                    forgery_type_index, forgery_type_category = getForgeryType(index)
                     
                     is_forgered_index, is_forgered_category = getIsForgered(forgery_type_index)
                     
