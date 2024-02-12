@@ -49,24 +49,28 @@ def generate_spectogram(original_path, copy_move_path, splicing_path, audio_name
     splicing_audio, _ = librosa.load(splicing_path)
     copy_move_audio, _ = librosa.load(copy_move_path)
     
+    # Ajuste de los parámetros para mejorar la calidad del espectrograma
+    hop_length = 128 # Desplazamiento de la ventana durante la transformación (cuanto menor sea, mayor resolución)
+    n_fft = 4096 # antidad de muestras de la señal que se toman para calcular la transformada de Fourier (cuanto mayor sea, mayor resolución)
+
     # Genera la gráfica del espectrograma
-    fig, ax = plt.subplots(3, 1, figsize=(10, 6))
+    fig, ax = plt.subplots(3, 1, figsize=(8, 6))
     fig.patch.set_facecolor('white')
 
     # Espectrograma del audio original
-    librosa.display.specshow(librosa.amplitude_to_db(np.abs(librosa.stft(original_audio)), ref=np.max), sr=sr, x_axis='time', y_axis='log', ax=ax[0])
+    librosa.display.specshow(librosa.amplitude_to_db(np.abs(librosa.stft(original_audio, hop_length=hop_length, n_fft=n_fft)), ref=np.max), sr=sr, hop_length=hop_length, x_axis='time', y_axis='log', ax=ax[0])
     ax[0].set_title('Espectrograma del audio original')
     ax[0].set_xlabel('Tiempo [s]')
     ax[0].set_ylabel('Amplitud')
 
     # Espectrograma del audio con copy-move
-    librosa.display.specshow(librosa.amplitude_to_db(np.abs(librosa.stft(copy_move_audio)), ref=np.max), sr=sr, x_axis='time', y_axis='log', ax=ax[1])
+    librosa.display.specshow(librosa.amplitude_to_db(np.abs(librosa.stft(copy_move_audio, hop_length=hop_length, n_fft=n_fft)), ref=np.max), sr=sr, hop_length=hop_length, x_axis='time', y_axis='log', ax=ax[1])
     ax[1].set_title('Espectrograma del audio con copy-move')
     ax[1].set_xlabel('Tiempo [s]')
     ax[1].set_ylabel('Amplitud')
 
     # Espectrograma del audio con splicing
-    librosa.display.specshow(librosa.amplitude_to_db(np.abs(librosa.stft(splicing_audio)), ref=np.max), sr=sr, x_axis='time', y_axis='log', ax=ax[2])
+    librosa.display.specshow(librosa.amplitude_to_db(np.abs(librosa.stft(splicing_audio, hop_length=hop_length, n_fft=n_fft)), ref=np.max), sr=sr, hop_length=hop_length, x_axis='time', y_axis='log', ax=ax[2])
     ax[2].set_title('Espectrograma del audio con splicing')
     ax[2].set_xlabel('Tiempo [s]')
     ax[2].set_ylabel('Amplitud')
@@ -74,7 +78,7 @@ def generate_spectogram(original_path, copy_move_path, splicing_path, audio_name
     plt.tight_layout()
 
     # Guarda la gráfica como un archivo PNG
-    plt.savefig(f'{SPECTOGRAM_LIBROSA_EXAMPLE_PATH}/{audio_name}.png')
+    plt.savefig(f'{SPECTOGRAM_LIBROSA_EXAMPLE_PATH}/{audio_name}.png', dpi=2048)
 
 
 selected_audio_path, audio_name, audio_path = select_random_audio(ORIGINAL_DATASET_PATH)
