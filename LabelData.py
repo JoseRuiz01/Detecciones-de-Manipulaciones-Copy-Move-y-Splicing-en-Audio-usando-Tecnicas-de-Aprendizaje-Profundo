@@ -1,12 +1,8 @@
 import os
 import csv
+from DataPaths import ORIGINAL_DATASET_PATH, COPY_MOVE_DATASET_PATH, SPLICING_DATASET_PATH
 
-# Dataset folders paths 
-original_dataset_path = '/home/jose/src/TFG/DatasetConcatenation/OriginalDataset'
-copy_move_dataset_path = '/home/jose/src/TFG/DatasetConcatenation/CopyMoveDataset'
-splicing_dataset_path = '/home/jose/src/TFG/DatasetConcatenation/SplicingDataset'
-
-folder_paths = [original_dataset_path, copy_move_dataset_path, splicing_dataset_path]
+folder_paths = [ORIGINAL_DATASET_PATH, COPY_MOVE_DATASET_PATH, SPLICING_DATASET_PATH]
 
 # Label lists
 forgery_category_label = ["Original_Audio", "Copy_Move_Audio", "Splicing_Audio"]
