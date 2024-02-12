@@ -3,7 +3,7 @@ import numpy as np
 import random
 import os
 from scipy.io import wavfile
-from DataPaths import ORIGINAL_DATASET_PATH, COPY_MOVE_DATASET_PATH, SPLICING_DATASET_PATH, SPECTOGRAM_EXAMPLE_PATH
+from DataPaths import ORIGINAL_DATASET_PATH, COPY_MOVE_DATASET_PATH, SPLICING_DATASET_PATH, SPECTOGRAM_MATPLOT_EXAMPLE_PATH
 
 
 '''
@@ -15,7 +15,7 @@ depending on the forgery method applied.
 '''
 
 #seleccionamos un audio aleatorio dentro de la carpeta original
-def select_random_audio(path_original):
+def select_random_audio(original_path):
     """
     Selecciona un audio aleatorio de la carpeta especificada y devuelve su ruta y nombre.
 
@@ -29,83 +29,83 @@ def select_random_audio(path_original):
 
     None: Si la carpeta está vacía.
     """
-    archives = os.listdir(path_original)
+    archives = os.listdir(original_path)
     
     if not archives:
         return None
+    
     #Selecciono un indice aleatorio, y lo cojo de la lista
     random_index = random.randint(0,len(archives)-1)
     random_audio = archives[random_index]
     
     # Construye la ruta completa al archivo de audio
-    ruta_audio = os.path.join(path_original, random_audio)
+    audio_path = os.path.join(original_path, random_audio)
     
     #nombre sin la extension
     audio_name = os.path.splitext(random_audio)[0]
     
-    return random_audio, audio_name, ruta_audio
+    return random_audio, audio_name, audio_path
 
 
 #busca el audio modificado en las dos carpetas, recibiendo el audio de la carpeta original
-def buscar_audio_modificado(path, nombre_audio):
-    archivos_encontrados = []
+def search_forgered_audio(path, audio_name):
+    files_found = []
     
-    archivos = os.listdir(path)
+    files = os.listdir(path)
     
-    for archivo in archivos:
-        if archivo.startswith(nombre_audio) and "_" in archivo:
-            archivos_encontrados.append(os.path.join(path,archivo))
+    for file in files:
+        if file.startswith(audio_name) and "_" in file:
+            files_found.append(os.path.join(path, file))
             
-    return archivos_encontrados
+    return files_found
 
     
-def selecciona_audios(archivos_encontrados_splicing,archivos_encontrados_copy_move):
+def select_audios(files_found_splicing, files_found_copy_move):
     #Selecciono un indice aleatorio, y lo cojo de la lista
     
-    random_index = random.randint(0,min(len(archivos_encontrados_splicing)-1,len(archivos_encontrados_copy_move)-1))
-    random_audio_splicing = archivos_encontrados_splicing[random_index]
-    random_audio_cm = archivos_encontrados_copy_move[random_index]
+    random_index = random.randint(0,min(len(files_found_splicing)-1,len(files_found_copy_move)-1))
+    random_audio_splicing = files_found_splicing[random_index]
+    random_audio_cm = files_found_copy_move[random_index]
     
     return random_audio_splicing, random_audio_cm
 
 
-def generate_spectogram(ruta_original,ruta_copy_move,ruta_splicing): 
-    fs,audio_original = wavfile.read(ruta_original)
-    fs,audio_con_splicing = wavfile.read(ruta_splicing)
-    fs,audio_con_cm = wavfile.read(ruta_copy_move)
-    
+def generate_spectogram(original_path, copy_move_path, splicing_path): 
+    fs, original_audio = wavfile.read(original_path)
+    fs, splicing_audio = wavfile.read(splicing_path)
+    fs, copy_move_audio = wavfile.read(copy_move_path)
     
     # Encuentra la longitud mínima de los audios
-    longitud_minima = min(len(audio_original), len(audio_con_splicing), len(audio_con_cm))
+    min_length = min(len(original_audio), len(splicing_audio), len(copy_move_audio))
 
     # Recorta los audios a la longitud mínima
-    audio_original_recortado = audio_original[:longitud_minima]
-    audio_con_splicing_recortado = audio_con_splicing[:longitud_minima]
-    audio_con_cm_recortado = audio_con_cm[:longitud_minima]
+    original_audio_cut = original_audio[:min_length]
+    splicing_audio_cut = splicing_audio[:min_length]
+    copy_move_audio_cut = copy_move_audio[:min_length]
     
     # Crea el tiempo para la gráfica
-    t = np.arange(0, longitud_minima / fs, 1 / fs)
+    t = np.arange(0, min_length / fs, 1 / fs)
 
     # Genera la gráfica del espectrograma
     fig, ax = plt.subplots(3, 1, figsize=(12, 9))  # Crea 3 subplots
     fig.patch.set_facecolor('white')
 
     # Espectrograma del audio original
-    ax[0].plot(t, audio_original_recortado)
+    ax[0].plot(t, original_audio_cut)
     ax[0].set_title('Audio original en el dominio del tiempo')
     ax[0].set_xlabel('Tiempo [s]')
     ax[0].set_ylabel('Amplitud')
     ax[0].grid(True)
 
     # Espectrograma del audio con copy-move
-    ax[1].plot(t, audio_con_cm_recortado, c='tab:green')  # Color verde
+    ax[1].plot(t, copy_move_audio_cut, c='tab:green')  # Color verde
     ax[1].set_title('Audio con copy-move en el dominio del tiempo')
     ax[1].set_xlabel('Tiempo [s]')
     ax[1].set_ylabel('Amplitud')
     ax[1].grid(True)
 
     # Espectrograma del audio con splicing
-    ax[2].plot(t, audio_con_splicing_recortado, c='tab:red')
+    ax[2].plot(t, splicing_audio_cut, c='tab:red')
     ax[2].set_title('Audio con splicing en el dominio del tiempo')
     ax[2].set_xlabel('Tiempo [s]')
     ax[2].set_ylabel('Amplitud')
@@ -114,27 +114,26 @@ def generate_spectogram(ruta_original,ruta_copy_move,ruta_splicing):
     plt.tight_layout()
 
     # Guarda la gráfica como un archivo PNG
-    plt.savefig(f'{SPECTOGRAM_EXAMPLE_PATH}/{nombre_audio}.png')
+    plt.savefig(f'{SPECTOGRAM_MATPLOT_EXAMPLE_PATH}/{audio_name}.png')
 
     
 
-ruta_audio_seleccionado, nombre_audio, ruta_audio = select_random_audio(ORIGINAL_DATASET_PATH)
 
-if ruta_audio_seleccionado is not None:
-    print(f"Audio seleccionado: {ruta_audio}")
+selected_audio_path, audio_name, audio_path = select_random_audio(ORIGINAL_DATASET_PATH)
+
+if selected_audio_path is not None:
+    print(f"Audio seleccionado: {audio_path}")
 else:
     print("La carpeta está vacía.")
     
 
 
-archivos_encontrados_splicing = buscar_audio_modificado(SPLICING_DATASET_PATH, nombre_audio)
-
-archivos_encontrados_copy_move = buscar_audio_modificado(COPY_MOVE_DATASET_PATH, nombre_audio)
-
-audio1, audio2 = selecciona_audios(archivos_encontrados_splicing,archivos_encontrados_copy_move)
+archivos_encontrados_splicing = search_forgered_audio(SPLICING_DATASET_PATH, audio_name)
+files_found_copy_move = search_forgered_audio(COPY_MOVE_DATASET_PATH, audio_name)
+audio1, audio2 = select_audios(archivos_encontrados_splicing,files_found_copy_move)
 
 print(f"Elemento de la lista 1: {audio1}")
 print(f"Elemento de la lista 2: {audio2}")
 
 
-generate_spectogram(ruta_audio,audio1,audio2)
+generate_spectogram(audio_path,audio1,audio2)
