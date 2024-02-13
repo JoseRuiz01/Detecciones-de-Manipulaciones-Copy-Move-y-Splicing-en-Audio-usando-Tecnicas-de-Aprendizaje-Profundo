@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy.io import wavfile
-from Constants.DataPaths import ORIGINAL_DATASET_PATH, COPY_MOVE_DATASET_PATH, SPLICING_DATASET_PATH, SPECTOGRAM_MATPLOT_EXAMPLE_PATH
+from DataPaths import ORIGINAL_DATASET_PATH, COPY_MOVE_DATASET_PATH, SPLICING_DATASET_PATH, SPECTOGRAM_MATPLOT_EXAMPLE_PATH
 from SpectogramsExamplesGenerator.SelectAudios import select_random_audio, search_forgered_audio, select_audios
 
 
