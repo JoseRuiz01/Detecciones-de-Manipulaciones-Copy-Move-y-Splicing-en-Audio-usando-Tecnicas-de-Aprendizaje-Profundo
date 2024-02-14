@@ -9,3 +9,4 @@ SPECTOGRAM_LIBROSA_EXAMPLE_PATH = 'C:/Users/rayma/Documents/Proyectos VSCode/Pro
 
 DATASET_PATH = 'C:/Users/rayma/Documents/Proyectos VSCode/GitHub Nestor/DeepLearningForgeryAudioDetection/PrepareTrainingData/labeled_dataset.csv'
 
+ 
