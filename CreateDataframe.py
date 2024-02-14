@@ -21,6 +21,11 @@ def csv_to_dataframe(csv_path):
 csv_path = DATASET_PATH
 result_dataframe = csv_to_dataframe(csv_path=csv_path)
 
+# Contar el número de etiquetas en la columna 'original_audio'
+numero_etiquetas_original_audio = result_dataframe['is_forgered_category'].value_counts()
+
+# Imprimir el resultado
+print(numero_etiquetas_original_audio)
 print(result_dataframe.info())
 print(result_dataframe.iloc[0:3])
 print(result_dataframe.iloc[10000:10003])

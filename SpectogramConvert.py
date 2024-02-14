@@ -16,8 +16,13 @@ def process_audio(path):
 
     spectogram = torchaudio.transforms.Spectrogram()(audio)
     
-    spectogram_np= spectogram.numpy()
+    #hay que ver si el espectograma es de Mel
+    #melspec = torchaudio.transforms.MelSpectrogram()(audio)
+    #plt.imshow(melspec.log2())
+    #plt.show()
+    #stft es para espectograma de mel
     
+    spectogram_np= spectogram.numpy()
     
     return spectogram_np
 
