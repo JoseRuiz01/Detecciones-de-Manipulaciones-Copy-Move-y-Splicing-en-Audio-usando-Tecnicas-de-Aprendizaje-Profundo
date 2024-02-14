@@ -6,3 +6,5 @@ SPLICING_DATASET_PATH = '/home/jose/src/TFG/DatasetConcatenation/SplicingDataset
 
 SPECTOGRAM_MATPLOT_EXAMPLE_PATH = '/home/jose/src/TFG/AudioSpectogram/Matplotlib'
 SPECTOGRAM_LIBROSA_EXAMPLE_PATH = '/home/jose/src/TFG/AudioSpectogram/Librosa'
+
+DATASET_PATH = '/home/jose/src/TFG/DeepLearningForgeryAudioDetection/PrepareTrainingData/labeled_dataset.csv'
