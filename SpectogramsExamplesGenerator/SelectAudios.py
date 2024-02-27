@@ -34,7 +34,7 @@ def search_forgered_audio(path, audio_name):
 
     
 def select_audios(files_found_splicing, files_found_copy_move):
-    # Select random index 
+    # Select random index
     random_index = random.randint(0,min(len(files_found_splicing)-1,len(files_found_copy_move)-1))
     
     # Take the random audios from the list of forgered audios matching the original audio
