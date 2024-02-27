@@ -1,6 +1,5 @@
 import torchaudio
 import pandas as pd
-import numpy as np
 from Constants.DataPaths import DATASET_PATH
 
 dataframe = pd.read_csv(DATASET_PATH,usecols=['audio_path'])
@@ -35,6 +34,6 @@ for audio in dataframe['audio_path']:
 dataframe['spectogram_of_audio'] = spectograms
 original_path = DATASET_PATH
 new_path = original_path.replace("labeled_dataset.csv", "")
-dataframe.to_csv(new_path+'audios_with_spectograms.csv')
+dataframe.to_csv(new_path+"audios_with_spectograms.csv")
 
 
