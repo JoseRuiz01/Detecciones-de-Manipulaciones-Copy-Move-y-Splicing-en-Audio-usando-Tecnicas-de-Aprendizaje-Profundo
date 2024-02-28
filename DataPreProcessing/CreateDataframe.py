@@ -1,6 +1,6 @@
 import pandas as pd
 
-from Constants.DataPaths import DATASET_PATH
+from Constants.DataPaths import LABELS_DATASET_PATH
 
 
 def csv_to_dataframe(csv_path):
@@ -19,7 +19,7 @@ def csv_to_dataframe(csv_path):
 
     return dataframe
 
-csv_path = DATASET_PATH
+csv_path = LABELS_DATASET_PATH
 result_dataframe = csv_to_dataframe(csv_path=csv_path)
 
 # Count the number of labels in the 'original_audio' column
