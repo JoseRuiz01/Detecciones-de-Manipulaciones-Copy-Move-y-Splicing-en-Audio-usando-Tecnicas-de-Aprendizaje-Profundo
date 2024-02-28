@@ -2,7 +2,7 @@ import torch
 import torchaudio
 import pandas as pd
 from torch.utils.data import Dataset, DataLoader, random_split
-from Constants.DataPaths import LABELS_DATASET_PATH
+from Constants.DataPaths import LABELS_DATASET_PATH, AUDIOS_DATASET_PATH
 import numpy as np
 
 class AudiosDataset(Dataset):
@@ -81,13 +81,9 @@ class AudiosDataset(Dataset):
 
         return aug_spec
 
-
-# Obtain the path to the CSV file containing the audio data
-DATASET_CSV_PATH = LABELS_DATASET_PATH.replace("labeled_dataset.csv", "audios_with_spectograms.csv")
-
 # Load the labels and audios DataFrame
 labels_df = pd.read_csv(LABELS_DATASET_PATH)
-dataset_df = pd.read_csv(DATASET_CSV_PATH)
+dataset_df = pd.read_csv(AUDIOS_DATASET_PATH)
 
 # Create the Sound Dataset instance
 sound_dataset = AudiosDataset(labels_df, dataset_df)

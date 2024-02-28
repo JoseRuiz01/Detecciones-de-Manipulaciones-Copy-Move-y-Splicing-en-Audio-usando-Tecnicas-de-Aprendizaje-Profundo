@@ -1,6 +1,6 @@
 import torchaudio
 import pandas as pd
-from Constants.DataPaths import LABELS_DATASET_PATH
+from Constants.DataPaths import LABELS_DATASET_PATH, AUDIOS_DATASET_PATH
 
 dataframe = pd.read_csv(LABELS_DATASET_PATH,usecols=['audio_path'])
 
@@ -32,7 +32,6 @@ for audio in dataframe['audio_path']:
     spectograms.append(spectogram_np)
 
 dataframe['spectogram_of_audio'] = spectograms
-new_path = LABELS_DATASET_PATH.replace("labeled_dataset.csv", "audios_with_spectograms.csv")
-dataframe.to_csv(new_path)
+dataframe.to_csv(AUDIOS_DATASET_PATH)
 
 
