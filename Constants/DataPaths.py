@@ -1,12 +1,12 @@
 # DataPaths with the specific paths, change it based on you device
 
-ORIGINAL_DATASET_PATH = 'C:/Users/rayma/Documents/Proyectos VSCode/Proyectos Python/DatasetConcatenation/OriginalDataset'
-COPY_MOVE_DATASET_PATH = 'C:/Users/rayma/Documents/Proyectos VSCode/Proyectos Python/DatasetConcatenation/CopyMoveDataset'
-SPLICING_DATASET_PATH = 'C:/Users/rayma/Documents/Proyectos VSCode/Proyectos Python/DatasetConcatenation/SplicingDataset'
+ORIGINAL_DATASET_PATH = '/home/jose/src/TFG/DatasetConcatenation/OriginalDataset'
+COPY_MOVE_DATASET_PATH = '/home/jose/src/TFG/DatasetConcatenation/CopyMoveDataset'
+SPLICING_DATASET_PATH = '/home/jose/src/TFG/DatasetConcatenation/SplicingDataset'
 
-SPECTOGRAM_MATPLOT_EXAMPLE_PATH = 'C:/Users/rayma/Documents/Proyectos VSCode/Proyectos Python/AudioSpectogram/Matplotlib'
-SPECTOGRAM_LIBROSA_EXAMPLE_PATH = 'C:/Users/rayma/Documents/Proyectos VSCode/Proyectos Python/AudioSpectogram/Librosa'
+SPECTOGRAM_MATPLOT_EXAMPLE_PATH = '/home/jose/src/TFG/AudioSpectogram/Matplotlib'
+SPECTOGRAM_LIBROSA_EXAMPLE_PATH = '/home/jose/src/TFG/AudioSpectogram/Librosa'
 
-DATASET_PATH = 'C:/Users/rayma/Documents/Proyectos VSCode/GitHub Nestor/DeepLearningForgeryAudioDetection/PrepareTrainingData/labeled_dataset.csv'
-
+LABELS_DATASET_PATH = '/home/jose/src/TFG/LabelDataset/DeepLearningForgeryAudioDetection/CSV/labeled_dataset.csv'
+AUDIOS_DATASET_PATH = '/home/jose/src/TFG/LabelDataset/DeepLearningForgeryAudioDetection/CSV/audios_with_spectograms.csv'
  
