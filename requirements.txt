@@ -1,0 +1,11 @@
+torch
+torchaudio
+torchvision
+torchsummary
+torcheval
+tqdm
+numpy
+pandas
+pickle
+scikit-learn
+timm
