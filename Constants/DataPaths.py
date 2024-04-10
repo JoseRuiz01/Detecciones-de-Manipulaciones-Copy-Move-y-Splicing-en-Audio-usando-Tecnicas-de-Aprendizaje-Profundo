@@ -7,6 +7,6 @@ SPLICING_DATASET_PATH = '/home/jose/src/TFG/DatasetConcatenation/SplicingDataset
 SPECTOGRAM_MATPLOT_EXAMPLE_PATH = '/home/jose/src/TFG/AudioSpectogram/Matplotlib'
 SPECTOGRAM_LIBROSA_EXAMPLE_PATH = '/home/jose/src/TFG/AudioSpectogram/Librosa'
 
-LABELS_DATASET_PATH = '/home/jose/src/TFG/LabelDataset/DeepLearningForgeryAudioDetection/CSV/labeled_dataset.csv'
-AUDIOS_DATASET_PATH = '/home/jose/src/TFG/LabelDataset/DeepLearningForgeryAudioDetection/CSV/audios_with_spectograms.csv'
+LABELS_DATASET_PATH = '/home/jose/src/TFG/Model/CSV/labeled_dataset.csv'
+AUDIOS_DATASET_PATH = '/home/jose/src/TFG/Model/CSV/audios_with_spectograms.csv'
  
