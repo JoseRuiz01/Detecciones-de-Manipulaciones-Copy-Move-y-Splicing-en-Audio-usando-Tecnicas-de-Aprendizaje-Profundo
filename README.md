@@ -1,9 +1,9 @@
 # Trabajo Fin de Grado en Detecciones de Manipulaciones Copy-Move y Splicing en Audio usando Técnicas de Aprendizaje Profundo. 
 Realizado por:
 
-José Antonio Ruiz Heredia
+- José Antonio Ruiz Heredia
 
-Nestor Antonio Marín
+- Nestor Antonio Marín
 
 
 ## Instrucciones para probar el modelo
