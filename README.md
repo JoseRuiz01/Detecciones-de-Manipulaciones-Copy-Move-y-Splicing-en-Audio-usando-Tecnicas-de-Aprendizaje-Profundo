@@ -8,7 +8,7 @@
 
 **Autores:**  
 <p>
-  <strong>José Antonio Ruiz Heredia</strong>  
+  <strong>- José Antonio Ruiz Heredia</strong>  
   <a href="https://www.linkedin.com/in/joseruizheredia/" target="_blank">
     <img src="images/linkedin.png" alt="LinkedIn" width="20" style="vertical-align:middle; margin-left:10px;"/>
   </a>
@@ -18,7 +18,7 @@
 </p>  
 
 <p>
-  <strong>Néstor Antonio Marín</strong>  
+  <strong>- Néstor Antonio Marín</strong>  
 </p>  
 
 ---
