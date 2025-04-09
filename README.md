@@ -12,7 +12,7 @@
   <a href="https://www.linkedin.com/in/joseruizheredia/" target="_blank">
     <img src="images/linkedin.png" alt="LinkedIn" width="20" style="vertical-align:middle; margin-left:10px;"/>
   </a>
-  <a href="mailto:joseanruiz01@gmail.com" title="Enviar correo">
+  <a href="https://mail.google.com/mail/?view=cm&to=joseanruiz01@gmail.com" target="_blank" title="Enviar correo">
     <img src="images/gmail.png" alt="Gmail" width="20" style="vertical-align:middle; margin-left:10px;"/>
   </a>
 </p>  
