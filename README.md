@@ -7,8 +7,19 @@
 </p>
 
 **Autores:**  
-- José Antonio Ruiz Heredia  
-- Néstor Antonio Marín
+<p>
+  <strong>José Antonio Ruiz Heredia</strong>  
+  <a href="https://www.linkedin.com/in/joseruizheredia/" target="_blank">
+    <img src="images/linkedin.png" alt="LinkedIn" width="20" style="vertical-align:middle; margin-left:10px;"/>
+  </a>
+  <a href="mailto:joseanruiz01@gmail.com">
+    <img src="images/gmail.png" alt="Gmail" width="20" style="vertical-align:middle; margin-left:10px;"/>
+  </a>
+</p>  
+
+<p>
+  <strong>Néstor Antonio Marín</strong>  
+</p>  
 
 ---
 
