@@ -1,9 +1,9 @@
 # Trabajo de Fin de Grado  
 ## Detección de Manipulaciones *Copy-Move* y *Splicing* en Audio mediante Técnicas de Aprendizaje Profundo
 <p align="center">
-  <img src="images/ucm.png" alt="Universidad Complutense de Madrid" width="200"/>
+  <img src="images/ucm.png" alt="Universidad Complutense de Madrid" width="150"/>
   &nbsp;&nbsp;&nbsp;
-  <img src="images/fdi.png" alt="Facultad de Informática" width="200"/>
+  <img src="images/fdi.png" alt="Facultad de Informática" width="150"/>
 </p>
 
 **Autores:**  
