@@ -28,7 +28,7 @@
 1. **Descargar el modelo final y los datos de prueba** desde el siguiente enlace:  
    [📁 Google Drive – Modelo y Datos de Prueba](https://drive.google.com/drive/folders/1BnsSqb9L6CuNkydg_6-EB9yMKPqrRvI9?usp=sharing)
 
-2. **Colocar el modelo descargado** en la carpeta `PicklesAndFinalModel`.
+2. **Colocar el modelo descargado** en la carpeta `./Model/PicklesAndFinalModel`.
 
 3. **Instalar las dependencias** ejecutando el archivo `Prerrequisitos.py`.  
    Las bibliotecas requeridas son: ``torch``, ``torchaudio``, ``torchvision``, ``transformers``, ``gradio``, ``numpy``, ``Pillow (PIL)``, ``timm``
