@@ -1,15 +1,25 @@
-# Trabajo Fin de Grado en Detecciones de Manipulaciones Copy-Move y Splicing en Audio usando Técnicas de Aprendizaje Profundo. 
-Realizado por:
+# Trabajo de Fin de Grado  
+## Detección de Manipulaciones *Copy-Move* y *Splicing* en Audio mediante Técnicas de Aprendizaje Profundo
 
-- José Antonio Ruiz Heredia
+**Autores:**  
+- José Antonio Ruiz Heredia  
+- Néstor Antonio Marín
 
-- Nestor Antonio Marín
+---
+
+## 🧪 Instrucciones para Probar el Modelo
+
+1. **Descargar el modelo final y los datos de prueba** desde el siguiente enlace:  
+   [📁 Google Drive – Modelo y Datos de Prueba](https://drive.google.com/drive/folders/1BnsSqb9L6CuNkydg_6-EB9yMKPqrRvI9?usp=sharing)
+
+2. **Colocar el modelo descargado** en la carpeta `PicklesAndFinalModel`.
+
+3. **Instalar las dependencias** ejecutando el archivo `Prerrequisitos.py`.  
+   Las bibliotecas requeridas son: ``torch``, ``torchaudio``, ``torchvision``, ``transformers``, ``gradio``, ``numpy``, ``Pillow (PIL)``, ``timm``
 
 
-## Instrucciones para probar el modelo
+4. **Ejecutar** el archivo `Gradio.ipynb` para iniciar la interfaz y comenzar a probar el modelo.
 
-1. Descargar el modelo final y datos de prueba en : https://drive.google.com/drive/folders/1BnsSqb9L6CuNkydg_6-EB9yMKPqrRvI9?usp=sharing
-2. Añadir el modelo descargado en la carpeta "PicklesAndFinalModel".
-3. Descargar las dependencias (torch, torchaudio, torchvision, transformers, gradio, numpy, PIL y timm) ejecutando el archivo "Prerrequisitos.py".
-4. Ejecutar el archivo "Gradio.ipynb".
+---
 
+📌 *Asegúrate de tener Python y los entornos virtuales correctamente configurados para evitar errores de dependencias.*
