@@ -1,7 +1,10 @@
 # Trabajo de Fin de Grado  
 ## Detección de Manipulaciones *Copy-Move* y *Splicing* en Audio mediante Técnicas de Aprendizaje Profundo
-![Universidad Complutense de Madrid](images/ucm.png)
-![Facultad de Informática](images/fdi.png)
+<p align="center">
+  <img src="images/ucm.png" alt="Universidad Complutense de Madrid" width="200"/>
+  &nbsp;&nbsp;&nbsp;
+  <img src="images/fdi.png" alt="Facultad de Informática" width="200"/>
+</p>
 
 **Autores:**  
 - José Antonio Ruiz Heredia  
